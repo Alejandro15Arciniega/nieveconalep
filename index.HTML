@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Nevería Jenny's</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#carrusel">Productos</a></li>
+      <li><a href="#helado-dia">Helado del Día</a></li>
+      <li><a href="#promociones">Promociones</a></li>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#acerca">Acerca de</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Nevería Jenny's</h1>
+    <p>Los mejores sabores de helados🍦</p>
+  </header>
+
+  <div class="carrusel-container" id="carrusel">
+    <button class="btn" id="prev">&#10094;</button>
+    <div class="carrusel" id="carrusel-inner">
+      <div class="producto"><img src="imagenes/helado1.jpg" alt="Helado 1"><h2>Fresa</h2></div>
+      <div class="producto"><img src="imagenes/helado2.jpg" alt="Helado 2"><h2>Combinado</h2></div>
+      <div class="producto"><img src="imagenes/helado3.jpg" alt="Helado 3"><h2>Chocolate</h2></div>
+      <div class="producto"><img src="imagenes/helado4.jpg" alt="Helado 4"><h2>Mamey</h2></div>
+      <div class="producto"><img src="imagenes/helado5.jpg" alt="Helado 5"><h2>Fresa-Chocolate</h2></div>
+      <div class="producto"><img src="imagenes/helado6.jpg" alt="Helado 6"><h2>Paleta Yogurt-Uva</h2></div>
+      <div class="producto"><img src="imagenes/helado7.jpg" alt="Helado 7"><h2>Rollitos de Nieve</h2></div>
+      <div class="producto"><img src="imagenes/helado8.jpg" alt="Helado 8"><h2>Combinado</h2></div>
+      <div class="producto"><img src="imagenes/helado9.jpg" alt="Helado 9"><h2>Chocolate-Fresa-Vainilla-Menta</h2></div>
+      <div class="producto"><img src="imagenes/helado10.jpg" alt="Helado 10"><h2>Vainilla</h2></div>
+    </div>
+    <button class="btn" id="next">&#10095;</button>
+  </div>
+
+  <section class="helado-dia-section" id="helado-dia">
+    <h2>Helado del Día</h2>
+    <div class="helado-dia-list">
+      <div class="helado-dia-item">
+        <img src="imagenes/helado11.jpg" alt="Helado del Día 1">
+        <h3>Helado de Mango</h3>
+        <p>Refrescante helado de mango natural, ideal para el calor.</p>
+      </div>
+      <div class="helado-dia-item">
+        <img src="imagenes/helado12.jpg" alt="Helado del Día 2">
+        <h3>Helado de Limón</h3>
+        <p>Un clásico: helado de limón con un toque ácido y dulce.</p>
+      </div>
+      <div class="helado-dia-item">
+        <img src="imagenes/helado13.jpg" alt="Helado del Día 3">
+        <h3>Helado de Galleta</h3>
+        <p>Cremoso helado con trozos de galleta, ¡el favorito de los niños!</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="promo-section" id="promociones">
+    <h2>Promociones</h2>
+    <div class="promo-list">
+      <div class="promo-item">
+        <h3>2x1 en paletas</h3>
+        <p>Todos los martes, disfruta de 2x1 en paletas de cualquier sabor.</p>
+      </div>
+      <div class="promo-item">
+        <h3>Descuento estudiantes</h3>
+        <p>Presenta tu credencial y obtén 10% de descuento en tu compra.</p>
+      </div>
+      <div class="promo-item">
+        <h3>Domingos de amigos</h3>
+        <p>Presenta tu credencial del conalep y lleva un helado gratis!</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="acerca" id="acerca">
+    <h2>Acerca de</h2>
+    <p>¡Ven y disfruta de un momento dulce! Somos una nevería familiar.</p>
+  </section>
+
+  <section class="galeria" id="galeria">
+    <h2>Galería</h2>
+
+    <div class="subir-foto">
+      <h3>¡Comparte tu foto disfrutando nuestro helado!</h3>
+      <input type="file" id="input-foto" accept="image/*">
+      <button id="btn-subir">Subir Foto</button>
+    </div>
+    <div class="imagenes-galeria">
+      <img src="imagenes/helado2.jpg" alt="Galería 1">
+      <img src="imagenes/helado5.jpg" alt="Galería 2">
+      <img src="imagenes/helado7.jpg" alt="Galería 3">
+      <img src="imagenes/helado11.jpg" alt="Galería 4">
+      <img src="imagenes/helado12.jpg" alt="Galería 5">
+    </div>
+  </section>
+
+  <footer id="contacto">
+    <p>Francisco Primo de Verdad SN, Miguel Hidalgo, 60670 Apatzingán de la Constitución, Mich.</p>
+    <p>📞 Teléfono: 453xxxxxxx</p>
+    <p>Nevería Jenny's &copy; 2024</p>
+  </footer>
+
+  <script>
+    // Carrusel
+    const carrusel = document.getElementById('carrusel-inner');
+    const next = document.getElementById('next');
+    const prev = document.getElementById('prev');
+
+    next.addEventListener('click', () => {
+      carrusel.scrollBy({ left: 220, behavior: 'smooth' });
+    });
+
+    prev.addEventListener('click', () => {
+      carrusel.scrollBy({ left: -220, behavior: 'smooth' });
+    });
+
+    const inputFoto = document.getElementById('input-foto');
+    const btnSubir = document.getElementById('btn-subir');
+    const galeria = document.querySelector('.imagenes-galeria');
+
+    btnSubir.addEventListener('click', function() {
+      if (inputFoto.files && inputFoto.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const nuevaImg = document.createElement('img');
+          nuevaImg.src = e.target.result;
+          nuevaImg.alt = 'Foto de cliente';
+          galeria.appendChild(nuevaImg);
+        };
+        reader.readAsDataURL(inputFoto.files[0]);
+        inputFoto.value = ''; 
+      } else {
+        alert('Por favor selecciona una foto.');
+      }
+    });
+  </script>
+  <style>
+    .subir-foto {
+      margin-bottom: 20px;
+      padding: 10px;
+      background: #f8f8f8;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .subir-foto input[type="file"] {
+      margin: 10px 0;
+    }
+    .subir-foto button {
+      background: #ff69b4;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background 0.2s;
+    }
+    .subir-foto button:hover {
+      background: #ff1493;
+    }
+    .imagenes-galeria {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    .imagenes-galeria img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      border: 2px solid #fff;
+      transition: transform 0.2s;
+    }
+    .imagenes-galeria img:hover {
+      transform: scale(1.07);
+      border-color: #ff69b4;
+    }
+  </style>
+</body>
+</html>
